@@ -5,10 +5,22 @@
 # See documentation in:
 # https://doc.scrapy.org/en/latest/topics/items.html
 
-import scrapy
+from scrapy.item import Item, Field
 
+class Daily(Item):
+    area= Field()
+    date = Field()
+    rank = Field()
+    buy_in = Field()
+    buy_out = Field()
 
-class HkexDailyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class DailyTop10(Item):
+    area = Field()
+    date = Field()
+    rank = Field()
+    name = Field()
+    stock_code = Field()
+    buy_in = Field()
+    buy_out = Field()
+    turnover = Field()
+
